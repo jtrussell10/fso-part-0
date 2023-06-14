@@ -1,12 +1,16 @@
 ```mermaid
 sequenceDiagram
-    participant dotcom
-    participant iframe
-    participant viewscreen
-    dotcom->>iframe: loads html w/ iframe url
-    iframe->>viewscreen: request template
-    viewscreen->>iframe: html & javascript
-    iframe->>dotcom: iframe ready
-    dotcom->>iframe: set mermaid data on iframe
-    iframe->>iframe: render mermaid
+    participant browser
+    participant server
+
+    browser->>server: HTTP POST to new_note
+    server->>browser: HTTP status code 302
+    browser->>server: GET notes
+    server->>browser: HTML document
+    browser->> server: GET css
+    server->> browser: css file 
+    browser->> server: GET js  
+    server->> browser: JavaScript file
+    browser->>server GET json
+    server->>browser: json
 ```
