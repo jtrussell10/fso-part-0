@@ -4,6 +4,7 @@ sequenceDiagram
     participant server
     browser->>server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note note
     server->>browser: HTTP status code 302
+    Note left of server: Server asks browser to do new HTTP GET request to /notes
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     server->>browser: HTML document
     browser->> server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
