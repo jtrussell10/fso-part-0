@@ -10,6 +10,6 @@ sequenceDiagram
     server->> browser: css file 
     browser->> server: GET js  
     server->> browser: JavaScript file
-    browser->>server GET json
+    browser->>server: GET json
     server->>browser: json
 ```
