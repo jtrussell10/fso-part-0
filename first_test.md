@@ -2,7 +2,6 @@
 sequenceDiagram
     participant browser
     participant server
-
     browser->>server: HTTP POST to new_note
     server->>browser: HTTP status code 302
     browser->>server: GET notes
